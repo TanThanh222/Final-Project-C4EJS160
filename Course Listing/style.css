@@ -37,13 +37,8 @@ body {
     gap: 10px;
 }
 
-.header-menu {
-    height: 100%;
-}
-
 .header-menu .active {
-    background-color: #f5f5f5;
-    height: 100%;
+    background-color: #f5f5f5;  
     padding: 20px 20px;
 }
 
@@ -523,6 +518,144 @@ body {
   gap:10px;
 }
 
+.nav-toggle{ display:none; background:none; border:0; padding:6px; cursor:pointer; }
+.nav-toggle span{
+  display:block; width:3px; height:16px; background:#111; border-radius:2px;
+  margin:0 2px;
+}
+.nav-toggle{ display:none; gap:4px; align-items:center; }
+@media (max-width:767px){
+  .nav-toggle{ display:inline-flex; order:2; margin-inline:auto; }
+  .header-logo{ order:1; }
+  .header-actions{ order:3; }
+  .header-login{ display:none; }
 
+  .header-menu{
+    position:absolute; left:0; right:0; top:100%;
+    display:block; background:#fff;
+    border-top:1px solid #eee;
+    transform-origin:top; transform:scaleY(0);
+    transition:.25s ease;
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
+  }
+  .header-menu a{ display:block; padding:14px 18px; border-bottom:1px solid #f2f2f2; }
+  .header-overall.is-open .header-menu{ transform:scaleY(1); }
+  .header-overall{ gap:12px; padding:12px 16px; }
+  .search-btn{ width:34px; height:34px; }
+}
+@media (min-width:768px)and (max-width: 1023px){
+  .nav-toggle{ display:inline-flex; order:2; margin-inline:auto; }
+  .header-logo{ order:1; }
+  .header-actions{ order:3; }
+  .header-login{ display:none; } 
+  
+  .header-menu{
+    position:absolute; left:0; right:0; top:100%;
+    display:block; background:#fff; border-top:2px solid #555555;
+    transform-origin:top; transform:scaleY(0); transition:.25s ease;
+    box-shadow:0 10px 22px rgba(0,0,0,.08);
+  }
+  .header-menu a{ display:block; padding:16px 22px; font-size:15px; }
+  .header-overall.is-open .header-menu{ transform:scaleY(1); }
 
+  .header-overall{ padding:14px 22px; }
+}
+
+@media (max-width: 1023px){
+  .header-menu{ z-index: 60; }
+  .header-overall.is-open .header-menu a{
+    background: #fff;}             
+  .header-overall.is-open .header-menu a:hover{
+    background: #f5f5f5;
+  }
+  .header-overall.is-open::after{
+    content: "";
+    position: fixed;
+    inset: 72px 0 0 0;             
+    background: rgba(0,0,0,.25);    
+    z-index: 55;                  
+  }
+}
+
+:root { --page-x: clamp(16px, 5vw, 200px); }
+
+.header-overall { padding-left: var(--page-x); padding-right: var(--page-x); }
+.breadcrumb { padding-left: var(--page-x); padding-right: var(--page-x); }
+.all-courses { padding-left: var(--page-x); padding-right: var(--page-x); }
+
+.card-img { position: relative; aspect-ratio: 16 / 9; overflow: hidden; }
+.card-img img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+
+.ac-top-container { gap: 16px; flex-wrap: wrap; }
+.search-box {
+  margin-right: 0; padding: 6px 0; border-bottom: 1px solid #000;
+  display: flex; align-items: center; gap: 8px; min-width: 220px;
+}
+.search-box input { width: 200px; }
+@media (max-width: 1023px){
+  .search-box { flex: 1 1 100%; order: 3; }
+  .page-title { order: 1; }
+  .ac-menu { order: 2; }
+}
+
+@media (max-width: 1199px){
+  .all-courses {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .filters {
+    position: static;
+    padding: 16px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 1199px){
+  .featured { grid-template-columns: repeat(2, 1fr); padding: 40px 0; }
+}
+@media (max-width: 639px){
+  .featured { grid-template-columns: 1fr; padding: 24px 0; }
+}
+
+.filters { position: sticky; top: 92px; }
+
+@media (max-width: 639px){
+  .pagination { gap: 8px; }
+  .pagination a { width: 40px; height: 40px; font-size: 15px; }
+}
+
+@media (max-width: 767px){
+  .breadcrumb { font-size: 14px; padding-top: 16px; padding-bottom: 16px; }
+  .page-title { font-size: 22px; }
+  .card-title { font-size: 17px; }
+  .card-body { padding: 16px 14px 6px; }
+  .card-footer { padding: 12px 14px 14px; }
+}
+
+@media (max-width: 1199px){
+  .site-footer .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding: 28px 20px;
+  }
+}
+@media (max-width: 639px){
+  .site-footer .footer-top {
+    grid-template-columns: 1fr;
+    padding: 24px 16px;
+  }
+  .site-footer .about-text { max-width: none; }
+}
+
+.ac-menu { display: flex; align-items: center; gap: 6px; }
+.ac-menu .menu-btn { padding: 6px; }
+.ac-menu .menu-btn img { width: 24px; height: 24px; display: block; }
+
+@media (max-width: 767px){
+  .search-btn img { width: 32px; height: 32px; }
+}
+img { max-width: 100%; height: auto; }
 
