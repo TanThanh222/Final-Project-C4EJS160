@@ -18,11 +18,14 @@
         <div class="header-logo">
             <img src="./header/main logo.png" alt="EduPress">
         </div>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
         <nav class="header-menu" aria-label="Main">
-            <a href="#">Home</a>
-            <a href="#">Courses</a>
+            <a href="#" class="active">Home</a>
+            <a href="./Course Listing/index.html">Courses</a>
             <a href="#">Blog</a>
-            <a href="#" class="active">Page <img src="./header/check icon.png" alt="icon"></a>
+            <a href="#">Page <img src="./header/check icon.png" alt="icon"></a>
             <a href="#">LearnPress Add-On</a>
             <a href="#">Premium Theme</a>
         </nav>
@@ -48,33 +51,42 @@
                     <h2 class="auth-title">Login</h2>
                     <form id="login-form">
                         <input id="login-identity" class="input" placeholder="Email or username*">
+
                         <div class="pw-wrap">
                             <input id="login-password" type="password" class="input" placeholder="Password*">
                             <button type="button" class="eye" data-target="login-password">👁</button>
                         </div>
-                        <label class="remember"><input id="remember" type="checkbox"> Remember me</label>
+
+                        <label class="remember">
+                            <input id="remember" type="checkbox"> Remember me
+                        </label>
                         <button class="btn" type="submit">Login</button>
                         <a id="forgot-link" class="form-link" href="#">Lost your password?</a>
                     </form>
                 </div>
+
                 <div class="auth-card">
                     <h2 class="auth-title">Register</h2>
                     <form id="register-form">
                         <input id="reg-email" class="input" placeholder="Email*">
                         <input id="reg-username" class="input" placeholder="Username*">
+
                         <div class="pw-wrap">
                             <input id="reg-password" type="password" class="input" placeholder="Password*">
                             <button type="button" class="eye" data-target="reg-password">👁</button>
                         </div>
+
                         <div class="pw-wrap">
                             <input id="reg-confirm" type="password" class="input" placeholder="Confirm Password*">
                             <button type="button" class="eye" data-target="reg-confirm">👁</button>
                         </div>
+
                         <button class="btn" type="submit">Register</button>
                     </form>
                 </div>
             </div>
         </div>
+
         <div id="forgot-modal" class="modal hidden">
             <div class="modal-box">
                 <h3>Reset password</h3>

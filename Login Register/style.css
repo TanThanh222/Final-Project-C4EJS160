@@ -268,6 +268,7 @@ body {
     font-weight: 500;
     cursor: pointer;
     margin-bottom: 20px;
+    margin-top: 10px;
 }
 
 .btn:hover {
@@ -326,20 +327,232 @@ body {
 }
 
 .pw-wrap {
-    position: relative;
+  position: relative;
 }
 
 .pw-wrap .eye {
-    position: absolute;
-    right: 10px;
-    top: 40%;
-    transform: translateY(-50%);
-    border: 0;
-    cursor: pointer;
-    font-size: 16px;
-    line-height: 1;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
 }
 
 .remember {
     margin: 0 0 10px;
 }
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: 0;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 3px;
+    height: 16px;
+    background: #111;
+    border-radius: 2px;
+    margin: 0 2px;
+}
+
+.nav-toggle {
+    display: none;
+    gap: 4px;
+    align-items: center;
+}
+
+@media (max-width: 1023px) {
+    .header-menu {
+        z-index: 60;
+    }
+
+    .header-overall.is-open .header-menu a {
+        background: #fff;
+    }
+
+    .header-overall.is-open .header-menu a:hover {
+        background: #f5f5f5;
+    }
+
+    .header-overall.is-open::after {
+        content: "";
+        position: fixed;
+        inset: 72px 0 0 0;
+        background: rgba(0, 0, 0, .25);
+        z-index: 55;
+    }
+}
+
+@media (max-width:767px) {
+    .nav-toggle {
+        display: inline-flex;
+        order: 2;
+        margin-inline: auto;
+    }
+
+    .header-logo {
+        order: 1;
+    }
+
+    .header-actions {
+        order: 3;
+    }
+
+    .header-login {
+        display: none;
+    }
+
+    .header-menu {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        display: block;
+        background: #fff;
+        border-top: 1px solid #eee;
+        transform-origin: top;
+        transform: scaleY(0);
+        transition: .25s ease;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, .08);
+    }
+
+    .header-menu a {
+        display: block;
+        padding: 14px 18px;
+        border-bottom: 1px solid #f2f2f2;
+    }
+
+    .header-overall.is-open .header-menu {
+        transform: scaleY(1);
+    }
+
+    .header-overall {
+        gap: 12px;
+        padding: 12px 16px;
+    }
+
+    .search-btn {
+        width: 34px;
+        height: 34px;
+    }
+}
+
+@media (min-width:768px)and (max-width: 1023px) {
+    .nav-toggle {
+        display: inline-flex;
+        order: 2;
+        margin-inline: auto;
+    }
+
+    .header-logo {
+        order: 1;
+    }
+
+    .header-actions {
+        order: 3;
+    }
+
+    .header-login {
+        display: none;
+    }
+
+    .header-menu {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        display: block;
+        background: #fff;
+        border-top: 2px solid #555555;
+        transform-origin: top;
+        transform: scaleY(0);
+        transition: .25s ease;
+        box-shadow: 0 10px 22px rgba(0, 0, 0, .08);
+    }
+
+    .header-menu a {
+        display: block;
+        padding: 16px 22px;
+        font-size: 15px;
+    }
+
+    .header-overall.is-open .header-menu {
+        transform: scaleY(1);
+    }
+
+    .header-overall {
+        padding: 14px 22px;
+    }
+}
+
+@media (max-width:767px) {
+
+    .breadcrumb {
+        padding: 16px;
+        font-size: 14px;
+    }
+
+    /* auth form */
+    .auth {
+        padding: 30px 16px;
+    }
+
+    .auth-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .auth-title {
+        font-size: 24px;
+    }
+
+    .site-footer .footer-top {
+        grid-template-columns: 1fr;
+        padding: 24px 16px;
+        text-align: center;
+    }
+
+    .site-footer .brand,
+    .site-footer .social {
+        justify-content: center;
+    }
+
+    .site-footer .about-text {
+        margin: 0 auto;
+    }
+}
+
+@media (min-width:768px) and (max-width:1023px) {
+
+    .breadcrumb {
+        padding: 20px;
+        font-size: 15px;
+    }
+
+    .auth {
+        padding: 40px 22px;
+    }
+
+    .auth-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .auth-title {
+        font-size: 28px;
+    }
+
+    .site-footer .footer-top {
+        grid-template-columns: 1fr 1fr;
+        padding: 32px 22px;
+    }
+}
+
