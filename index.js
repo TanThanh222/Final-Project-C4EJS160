@@ -6,10 +6,10 @@ const header = document.querySelector('.header-overall');
     toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
 
-  // đóng khi click ngoài menu
   document.addEventListener('click', (e)=>{
     if (!header.contains(e.target)) {
       header.classList.remove('is-open');
       toggle.setAttribute('aria-expanded','false');
     }
   });
+
