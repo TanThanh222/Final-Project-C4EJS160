@@ -529,16 +529,6 @@ body {
 .course-single .course-main { padding-left: var(--page-x); padding-right: var(--page-x); }
 .course-hero { padding-left: var(--page-x); padding-right: var(--page-x); }
 
-@media (min-width: 1024px){
-  .hero-card { position: absolute; right: 155px; top: 20px; transform: scale(0.8); }
-  .hero-card .hero-thumb{ position: relative; aspect-ratio: 16/9; }
-  .hero-card .hero-thumb img{
-    position: absolute; inset: 0;
-    width: 100%;
-    object-fit: cover; display: block;
-  }
-}
-
 @media (min-width:768px) and (max-width:1023px){
   .course-hero{
     display: grid;
@@ -630,7 +620,7 @@ body {
   .course-single .btn {
     max-width: 100%;
   }
-  .site-footer{ overflow-x: hidden; } /* an toàn chống tràn do viền/đổ bóng */
+  .site-footer{ overflow-x: hidden; }
   .site-footer .footer-top{
     grid-template-columns: 1fr;
     gap: 18px;
