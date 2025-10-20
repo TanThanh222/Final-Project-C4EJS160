@@ -68,7 +68,7 @@ Công nghệ Mô tả
 ### Login / Register (`/LoginRegister/login.html`)
 - Form đăng nhập và đăng ký học viên.  
 - Dữ liệu lưu bằng LocalStorage.  
-### 📘 Enrollments (`/enrollments.js`)
+### Enrollments (`/enrollments.js`)
 - Hiển thị danh sách các khóa học mà học viên đã đăng ký.  
 - Dữ liệu được lấy từ LocalStorage.  
 - Có thể mở khóa học đã đăng ký để xem lại nội dung.
