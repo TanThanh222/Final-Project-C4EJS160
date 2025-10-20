@@ -66,7 +66,7 @@ Công nghệ Mô tả
 - Nút để vào học khóa học.
 ### Course Single 2 (`/CourseSingle2/coursesingle2.html`)
 ### Login / Register (`/LoginRegister/login.html`)
-- Form đăng nhập và đăng ký học viên.  
+- Form đăng ký, đăng nhập & quên mật khẩu của học viên.  
 - Dữ liệu lưu bằng LocalStorage.  
 ### Enrollments (`/enrollments.js`)
 - Hiển thị danh sách các khóa học mà học viên đã đăng ký.  
