@@ -64,8 +64,8 @@ Công nghệ Mô tả
 ### Course Single (`/coursesingle.html`)
 - Trang chi tiết khóa học: mô tả, thời lượng, giảng viên, đánh giá.  
 - Nút để vào học khóa học.
-### 🎓 Course Single 2 (`/CourseSingle2/coursesingle2.html`)
-### 🔐 Login / Register (`/LoginRegister/login.html`)
+### Course Single 2 (`/CourseSingle2/coursesingle2.html`)
+### Login / Register (`/LoginRegister/login.html`)
 - Form đăng nhập và đăng ký học viên.  
 - Dữ liệu lưu bằng LocalStorage.  
 ### 📘 Enrollments (`/enrollments.js`)
@@ -74,8 +74,7 @@ Công nghệ Mô tả
 - Có thể mở khóa học đã đăng ký để xem lại nội dung.
 ---
 ## 5. Cách chạy dự án
-### 🔹 Cách 1 — Dùng Live Server
-1. Cài extension **Live Server** trên VS Code.
+1. Cài extension Live Server trên VS Code.
 2. Mở file `Final-Project-C4EJS60/index.html` → chuột phải → chọn **Open with Live Server.
 
 Đặng Tấn Thành

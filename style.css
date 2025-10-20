@@ -37,8 +37,13 @@ body {
     gap: 10px;
 }
 
+.header-menu {
+    height: 100%;
+}
+
 .header-menu .active {
     background-color: #f5f5f5;
+    height: 100%;
     padding: 20px 20px;
 }
 
@@ -830,16 +835,6 @@ body {
     font-weight: 400;
 }
 
-.body {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    padding: 10px 10px 10px;
-    gap: 0px;
-    width: 100%;
-}
-
 :root {
     --footer-bg: #f5f5f5;
     --footer-text: #555555;
@@ -999,15 +994,9 @@ body {
     margin: 0 2px;
 }
 
-.nav-toggle {
-    display: none;
-    gap: 4px;
-    align-items: center;
-}
-
-@media (max-width:1023px) {
+@media (max-width: 1023px) {
     .header-menu {
-        z-index: 100;
+        z-index: 60;
     }
 
     .header-overall.is-open .header-menu a {
@@ -1023,15 +1012,36 @@ body {
         position: fixed;
         inset: 72px 0 0 0;
         background: rgba(0, 0, 0, .25);
-        z-index: 90;
+        z-index: 55;
     }
 
-    body.is-locked {
-        overflow: hidden;
+    .categories-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .featured-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .t-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .articles-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .banner2,
+    .banner3 {
+        transform: none;
     }
 }
 
-@media (max-width:767.98px) {
+@media (max-width:767px) {
     .nav-toggle {
         display: inline-flex;
         order: 2;
@@ -1058,15 +1068,10 @@ body {
         display: block;
         background: #fff;
         border-top: 1px solid #eee;
+        transform-origin: top;
         transform: scaleY(0);
-        transition: transform .25s ease;
+        transition: .25s ease;
         box-shadow: 0 8px 18px rgba(0, 0, 0, .08);
-        pointer-events: none;
-    }
-
-    .header-overall.is-open .header-menu {
-        transform: scaleY(1);
-        pointer-events: auto;
     }
 
     .header-menu a {
@@ -1075,29 +1080,385 @@ body {
         border-bottom: 1px solid #f2f2f2;
     }
 
+    .header-overall.is-open .header-menu {
+        transform: scaleY(1);
+    }
+
+    .header-overall {
+        gap: 12px;
+        padding: 12px 16px;
+    }
+
+    .search-btn {
+        width: 34px;
+        height: 34px;
+    }
+
     .container {
         padding: 0 16px;
         max-width: 100%;
     }
 
-    .categories .categories-grid {
-        display: grid;
-        grid-template-columns: 1fr !important;
-        gap: 14px !important;
+    .categories {
+        padding: 36px 12px;
     }
 
-    .featured .featured-grid {
-        grid-template-columns: 1fr !important;
-        gap: 16px !important;
+    .featured {
+        padding: 36px 12px;
     }
 
-    .articles .articles-grid {
-        grid-template-columns: 1fr !important;
-        gap: 14px !important;
+    .articles {
+        padding: 0 12px;
+    }
+
+    :root {
+        --header-h: 72px;
+    }
+
+    .banner {
+        min-height: 440px;
+        padding-top: var(--header-h);
+    }
+
+    .banner-images {
+        position: absolute;
+        inset: 0;
+    }
+
+    .banner-student {
+        position: static;
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto 8px;
+    }
+
+    .banner-student img {
+        width: 100%;
+        height: auto;
+    }
+
+    .banner-text {
+        position: relative;
+        left: 0;
+        top: 0;
+        transform: none;
+        max-width: 100%;
+        padding: 12px 8px;
+    }
+
+    .banner-text h1 {
+        font-size: 30px;
+        line-height: 1.25;
+        margin: 4px 0 12px;
+    }
+
+    .banner-text p {
+        font-size: 14px;
+        margin: 6px 0 14px;
+    }
+
+    .banner-img1,
+    .banner-img2,
+    .banner-img3,
+    .banner-img4 {
+        display: none;
+    }
+
+    .btn {
+        padding: 12px 16px;
+        border-radius: 18px;
+        font-size: 14px;
+    }
+
+    .categories-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .categories-title {
+        font-size: 22px;
+    }
+
+    .categories-subtitle {
+        font-size: 14px;
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .category-card {
+        padding: 18px 14px;
+    }
+
+    .category-card h3 {
+        font-size: 15px;
+    }
+
+    .category-card p {
+        font-size: 13px;
+    }
+
+    .category-card p.category-count {
+        font-size: 12px;
+    }
+
+    .featured-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+        margin-bottom: 22px;
+    }
+
+    .featured-title {
+        font-size: 22px;
+    }
+
+    .featured-subtitle {
+        font-size: 14px;
+    }
+
+    .featured-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .card-body {
+        padding: 14px 14px 6px;
+    }
+
+    .card-title {
+        font-size: 16px;
+    }
+
+    .card-meta {
+        gap: 10px;
+    }
+
+    .card-footer {
+        padding: 10px 14px 14px;
+    }
+
+    .price {
+        font-size: 14px;
+    }
+
+    .banner2 {
+        margin: 0 12px;
+        transform: none;
+    }
+
+    .banner2-text {
+        position: static;
+        max-width: 100%;
+        padding: 12px 4px 0;
+        transform: none;
+        text-align: left;
+    }
+
+    .banner2-text h3 {
+        font-size: 14px;
+    }
+
+    .banner2-text h1 {
+        font-size: 22px;
+    }
+
+    .banner2-text p {
+        font-size: 14px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin: 28px auto;
+        padding: 0 12px;
+        transform: none;
+    }
+
+    .stat-card {
+        padding: 20px 16px;
+    }
+
+    .stat-card h3 {
+        font-size: 22px;
+    }
+
+    .stat-card p {
+        font-size: 13px;
+    }
+
+    .grow-skill {
+        padding: 44px 0;
+    }
+
+    .grow-skill .container {
+        flex-direction: column;
+        gap: 24px;
+        padding: 0 16px;
+    }
+
+    .grow-skill-image img {
+        max-width: 100%;
+    }
+
+    .grow-skill-text {
+        transform: none;
+        max-width: 100%;
+    }
+
+    .grow-skill-text h2 {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    .grow-skill-text p {
+        font-size: 15px;
+    }
+
+    .banner3 {
+        margin: 0 12px;
+        transform: none;
+    }
+
+    .banner3-text {
+        position: static;
+        text-align: left;
+        max-width: 100%;
+        padding: 12px 4px 0;
+    }
+
+    .banner3-text h3 {
+        font-size: 14px;
+    }
+
+    .banner3-text h1 {
+        font-size: 20px;
+    }
+
+    .banner3-text p {
+        font-size: 13px;
+    }
+
+    .t-head h2 {
+        font-size: 22px;
+    }
+
+    .t-head p {
+        font-size: 13px;
+    }
+
+    .t-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .t-card {
+        padding: 18px 14px;
+        min-height: auto;
+    }
+
+    .t-text {
+        font-size: 15px;
+    }
+
+    .academy-banner {
+        margin: 36px 0;
+    }
+
+    .academy-banner-img img:last-child {
+        display: none;
+    }
+
+    .academy-content {
+        position: static;
+        width: 100%;
+        transform: none;
+        padding: 12px 16px 0;
+        gap: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .academy-left {
+        font-size: 15px;
+    }
+
+    .academy-right {
+        gap: 10px;
+    }
+
+    .student-btn {
+        padding: 10px 14px;
+    }
+
+    .articles-header {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+        margin-bottom: 22px;
+    }
+
+    .articles-title {
+        font-size: 22px;
+    }
+
+    .articles-subtitle {
+        font-size: 14px;
+    }
+
+    .articles-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .articles-card h3 {
+        font-size: 15px;
+    }
+
+    .articles-card p {
+        font-size: 13px;
+    }
+
+    .site-footer {
+        margin-top: 56px;
+    }
+
+    .site-footer .footer-top {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 24px 16px;
+    }
+
+    .site-footer .brand-logo {
+        width: 130px;
+    }
+
+    .site-footer .about-text {
+        font-size: 13px;
+    }
+
+    .site-footer .footer-title {
+        font-size: 14px;
+    }
+
+    .site-footer .footer-list a {
+        font-size: 13px;
+    }
+
+    .site-footer .contact {
+        font-size: 12px;
+    }
+
+    .site-footer .footer-bottom {
+        padding: 14px 12px 28px;
+        font-size: 12px;
     }
 }
 
-@media (min-width:768px) and (max-width:1023.98px) {
+@media (min-width:768px)and (max-width: 1023px) {
     .nav-toggle {
         display: inline-flex;
         order: 2;
@@ -1123,35 +1484,208 @@ body {
         top: 100%;
         display: block;
         background: #fff;
-        border-top: 2px solid #555;
+        border-top: 2px solid #555555;
+        transform-origin: top;
         transform: scaleY(0);
-        transition: transform .25s ease;
+        transition: .25s ease;
         box-shadow: 0 10px 22px rgba(0, 0, 0, .08);
-        pointer-events: none;
+    }
+
+    .header-menu a {
+        display: block;
+        padding: 16px 22px;
+        font-size: 15px;
     }
 
     .header-overall.is-open .header-menu {
         transform: scaleY(1);
-        pointer-events: auto;
+    }
+
+    .header-overall {
+        padding: 14px 22px;
     }
 
     .container {
         padding: 0 24px;
-        max-width: 960px;
+        max-width: 100%;
     }
 
-    .categories .categories-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 16px !important;
+    .categories {
+        padding: 44px 20px;
     }
 
-    .featured .featured-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 20px !important;
+    .featured {
+        padding: 44px 20px;
     }
 
-    .articles .articles-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 18px !important;
+    .articles {
+        padding: 0 20px;
+    }
+
+    .banner {
+        min-height: 520px;
+    }
+
+    .banner-text {
+        left: 40px;
+        top: 30px;
+        transform: none;
+        max-width: 520px;
+    }
+
+    .banner-text h1 {
+        font-size: 40px;
+    }
+
+    .banner-text p {
+        font-size: 15px;
+    }
+
+    .banner-student {
+        right: 0;
+        left: auto;
+        width: 46%;
+        bottom: 0;
+    }
+
+    .banner-img1,
+    .banner-img2,
+    .banner-img3,
+    .banner-img4 {
+        transform: scale(0.8);
+    }
+
+    .categories-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .category-card {
+        padding: 24px 18px;
+    }
+
+    .featured-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .card-title {
+        font-size: 17px;
+    }
+
+    .banner2 {
+        margin: 0 24px;
+        transform: none;
+    }
+
+    .banner2-text {
+        top: 12%;
+        left: 6%;
+        max-width: 52%;
+    }
+
+    .banner2-text h1 {
+        font-size: 30px;
+    }
+
+    .banner2-text p {
+        font-size: 15px;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+        margin: 36px auto;
+    }
+
+    .stat-card {
+        padding: 32px 28px;
+    }
+
+    .stat-card h3 {
+        font-size: 28px;
+    }
+
+    .grow-skill .container {
+        gap: 32px;
+        padding: 0 24px;
+    }
+
+    .grow-skill-text {
+        transform: none;
+    }
+
+    .grow-skill-text h2 {
+        font-size: 28px;
+    }
+
+    .grow-skill-text p {
+        font-size: 16px;
+    }
+
+    .banner3 {
+        margin: 0 24px;
+        transform: none;
+    }
+
+    .banner3-text {
+        top: 18%;
+        left: 20%;
+        max-width: 56%;
+        transform: none;
+    }
+
+    .banner3-text h1 {
+        font-size: 26px;
+    }
+
+    .banner3-text p {
+        font-size: 14px;
+    }
+
+    .t-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .t-card {
+        min-height: 200px;
+    }
+
+    .t-text {
+        font-size: 16px;
+    }
+
+    .academy-content {
+        left: 8%;
+        width: 84%;
+        gap: 16px;
+    }
+
+    .academy-left {
+        font-size: 16px;
+    }
+
+    .academy-right .btn {
+        padding: 12px 18px;
+    }
+
+    .articles-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .articles-card h3 {
+        font-size: 15px;
+    }
+
+    .site-footer .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        padding: 32px 24px;
+    }
+
+    .site-footer .about-text {
+        max-width: none;
     }
 }
