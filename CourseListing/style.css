@@ -279,7 +279,10 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: -50px;
+}
+
+.ac-top-container h3 {
+    margin-top: 30px;
 }
 
 .page-title {
